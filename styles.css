@@ -189,7 +189,8 @@ img {
 .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: var(--white);
+    color: #F5F5F5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
@@ -199,9 +200,9 @@ img {
     color: var(--white);
 }
 
-/* Alterar apenas a classe do botão WhatsApp (mantenha todo o resto do CSS igual) */
 .btn-whatsapp {
-    background: #25D366; /* Verde do WhatsApp */
+    background: #25D366;
+    background: var();
     color: var(--white);
     padding: 15px 30px;
     border-radius: 30px;
@@ -213,9 +214,9 @@ img {
 }
 
 .btn-whatsapp:hover {
-    background: #128C7E; /* Verde mais escuro para hover */
+    background: var(--secondary);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);
 }
 
 .hero-image img {
@@ -347,8 +348,100 @@ img {
     color: var(--white);
 }
 
-.about-image img {
+.btn-portfolio {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-portfolio:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+}
+
+.btn-portfolio i {
+    font-size: 1.2rem;
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.carousel-indicator.active {
+    background: var(--primary);
 }
 
 /* Testimonials */
@@ -621,5 +714,15 @@ img {
     
     .service-card {
         padding: 20px;
+    }
+    
+    .carousel-control {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+    
+    .carousel-indicator {
+        width: 10px;
+        height: 10px;
     }
 }
